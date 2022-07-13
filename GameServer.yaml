@@ -1,7 +1,7 @@
 apiVersion: "agones.dev/v1"
 kind: GameServer
 metadata:
-  generateName: "RobinManiaServer"
+  generateName: "robinmaniaserver"
 spec:
   ports:
   - name: default
@@ -10,7 +10,7 @@ spec:
   template:
     spec:
       containers:
-      - name: RobinManiaServer
+      - name: robinmaniaserver
         image: ziedchekir/robin_server:1.0
         resources:
           requests:
