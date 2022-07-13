@@ -1,0 +1,23 @@
+apiVersion: "agones.dev/v1"
+kind: Fleet
+metadata:
+  name: robinfleet
+spec:
+  replicas: 10
+  template:
+    spec:
+      ports:
+      - name: default
+        containerPort: 7654
+      template:
+        spec:
+          containers:
+          - name: robinfleet
+            image: gcr.io/agones-images/simple-game-server:0.13
+            resources:
+              requests:
+                memory: "64Mi"
+                cpu: "20m"
+              limits:
+                memory: "64Mi"
+                cpu: "20m"
