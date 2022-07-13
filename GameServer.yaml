@@ -1,0 +1,21 @@
+apiVersion: "agones.dev/v1"
+kind: GameServer
+metadata:
+  generateName: "RobinManiaServer"
+spec:
+  ports:
+  - name: default
+    portPolicy: Dynamic
+    containerPort: 7777
+  template:
+    spec:
+      containers:
+      - name: RobinManiaServer
+        image: ziedchekir/robin_server:1.0
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "100m"
+          limits:
+            memory: "100Mi"
+            cpu: "100m"
